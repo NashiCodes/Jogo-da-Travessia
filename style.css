@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+.fundo {
+  display: flex;
+  background-image: url("./imgs/fundo.png");
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Esqr {
+  height: 100vh;
+  width: 387px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: green;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.Dir {
+  height: 100vh;
+  width: 360px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: green;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.Rio{
+  height: 100vh;
+  width: 750px;
+  padding-left: 66px;
+  background-color: blue;
+}
