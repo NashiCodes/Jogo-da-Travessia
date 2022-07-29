@@ -1,5 +1,20 @@
 body {
   margin: 0;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: medium;
+  font-style: italic;
+  background-color: rgb(17, 27, 36);
+}
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 9px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(30, 37, 56);
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: medium;
+  font-style: italic;
+  width: auto;
 }
 .fundo {
   display: flex;
@@ -10,6 +25,21 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.telaInicial {
+  margin-left: 25px;
+  position: absolute;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  background-color: rgb(37, 85, 115);
+  border-radius: 45px;
+  box-shadow: inset 1px 1px 10px rgba(44, 44, 44, 0.812);
+}
+
 .Esqr {
   height: 100vh;
   width: 387px;
