@@ -34,7 +34,6 @@ Rio.style.justifyContent = "flex-start";
 farmer.style.display = "none";
 boat.style.display = "none";
 
-
 botao.addEventListener("click", formata);
 
 ovelha.addEventListener("click", mover);
@@ -58,6 +57,14 @@ function formata(e) {
   } else reinicia();
 }
 
+function removeElementos() {
+  ovelha.style.display = "none";
+  lobo.style.display = "none";
+  alface.style.display = "none";
+  farmer.style.display = "none";
+  boat.style.display = "none";
+}
+
 function reinicia() {
   Esqr.appendChild(ovelha);
   Esqr.appendChild(lobo);
@@ -75,35 +82,38 @@ function mover() {
     if (i == 0) {
       Esqr.removeChild(this);
       Rio.appendChild(this);
-      this.style.position = "relative";
-      this.style.paddingLeft = "150px";
-      this.style.paddingBottom = "90px";
+      organizaBarco(this);
       i++;
     } else {
       Rio.removeChild(this);
       Esqr.appendChild(this);
-      this.style.position = "static";
-      this.style.paddingLeft = "0px";
-      this.style.paddingBottom = "0px";
+      organizaMargem(this);
       i--;
     }
   } else {
     if (i == 0) {
       Dir.removeChild(this);
       Rio.appendChild(this);
-      this.style.position = "relative";
-      this.style.paddingLeft = "150px";
-      this.style.paddingBottom = "90px";
+      organizaBarco(this);
       i++;
     } else {
       Rio.removeChild(this);
       Dir.appendChild(this);
-      this.style.position = "static";
-      this.style.paddingLeft = "0px";
-      this.style.paddingBottom = "0px";
+      organizaMargem(this);
       i--;
     }
   }
+}
+
+function organizaBarco(objeto) {
+  objeto.style.position = "relative";
+  objeto.style.paddingLeft = "150px";
+  objeto.style.paddingBottom = "90px";
+}
+function organizaMargem(objeto) {
+  objeto.style.position = "static";
+  objeto.style.paddingLeft = "0px";
+  objeto.style.paddingBottom = "0px";
 }
 
 function travessia() {
@@ -111,4 +121,47 @@ function travessia() {
     Rio.style.justifyContent = "flex-end";
     farmer.style.paddingRight = "180px";
   } else Rio.style.justifyContent = "flex-start";
+
+  confere();
+}
+
+function confere() {
+  confereDireta();
+  confereEsquerda();
+}
+
+function confereDireta() {
+  if (
+    Dir.querySelector("#ovelha") != null &&
+    Dir.querySelector("#lobo") != null &&
+    Dir.querySelector("#alface") == null
+  ) {
+    derrota.style.display = "block";
+    removeElementos();
+  } else if (
+    Dir.querySelector("#alface") != null &&
+    Dir.querySelector("#ovelha") != null &&
+    Dir.querySelector("#lobo") == null
+  ) {
+    derrota.style.display = "block";
+    removeElementos();
+  }
+}
+
+function confereEsquerda() {
+  if (
+    Esqr.querySelector("#ovelha") != null &&
+    Esqr.querySelector("#lobo") != null &&
+    Esqr.querySelector("#alface") == null
+  ) {
+    derrota.style.display = "block";
+    removeElementos();
+  } else if (
+    Esqr.querySelector("#ovelha") != null &&
+    Esqr.querySelector("#alface") != null &&
+    Esqr.querySelector("#lobo") == null
+  ) {
+    derrota.style.display = "block";
+    removeElementos();
+  }
 }
