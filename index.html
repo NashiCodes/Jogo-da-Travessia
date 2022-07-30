@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 4</title>
+    <title>Travessia</title>
+    <script defer src="travessia.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>O Fazendeiro, o Lobo, o Carneiro, e a Alface</h1>
-    <div>
-      <h2>Instruções:</h2>
-      <p>
-        O fazendeiro deve chegar até a outra margem do rio com todas a
-        mercadorias
-      </p>
-      <p>
-        Porém ele só pode levar um a cada travessia, mas o Lobo não pode ficar
-        sozinho com o Carneiro, e nem o Carneiro sozinho com a alface.
-      </p>
+    <div class="fundo">
+      <div class="container" id="telaInicial">
+        <h1>Bem vindo ao Jogo da travessia</h1>
+        <dl>
+          <dt>Instruções:</dt>
+          <dd>
+            Para vencer o jogo, o fazendeiro precisa chegar até o outro lado do
+            rio com o Lobo, a oveha e a alface
+          </dd>
+          <dd>
+            Porém o lobo não pode ficar sozinho com a oveha, e a ovelha não pode
+            ficar sozinha com a alface.
+          </dd>
+        </dl>
+        <button class="botao">COMEÇAR!</button>
+      </div>
+      <div class="container" id="derrota">
+        <h1>Que Pena você perdeu :(</h1>
+        <button class="botao">Tentar Novamente !</button>
+      </div>
+      <div class="container" id="vitoria">
+        <h1>Parabéns você conseguiu!!</h1>
+        <button class="botao">Reiniciar</button>
+      </div>
+      <div class="Esqr">
+        <img class="animal" id="ovelha" src="./imgs/ovelha.png" alt="ovelha" />
+        <img class="animal" id="lobo" src="./imgs/lobo.png" alt="ovelha" />
+        <img class="animal" id="alface" src="./imgs/lettuce.png" alt="ovelha" />
+      </div>
+      <div class="Rio">
+        <img class="travessia" id="boat" src="./imgs/boat.png" alt="" />
+        <img class="travessia" id="farmer" src="./imgs/farmer.png" alt="" />
+      </div>
+      <div class="Dir"></div>
     </div>
-    <section class="boxJogo">
-      <div id="Esq">
-        <img src="imgs\grass.jpg" alt="margem esquerda" />
-      </div>
-      <div id="rio">
-        <img src="imgs\water.jpg" alt="Rio" />
-      </div>
-      <div id="Dir">
-        <img src="imgs\grass.jpg" alt="margem direita" />
-      </div>
-      <div id="elementos">
-        <div id="farmer">
-          <img src="imgs\farmer.png" alt="" />
-        </div>
-
-        <div id="wolf">
-          <img src="imgs\lobo.png" alt="" />
-        </div>
-
-        <div id="sheep">
-          <img src="imgs\ovelha.png" alt="" />
-        </div>
-
-        <div id="lettuce">
-          <img src="imgs\lettuce.png" alt="" />
-        </div>
-      </div>
-    </section>
   </body>
 </html>
