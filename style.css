@@ -85,6 +85,7 @@ button {
   width: auto;
   height: auto;
   margin: 40px;
+  cursor: pointer;
 }
 
 #alface {
@@ -97,6 +98,7 @@ button {
   width: auto;
   height: auto;
   position: absolute;
+  cursor: pointer;
 }
 
 #boat {
