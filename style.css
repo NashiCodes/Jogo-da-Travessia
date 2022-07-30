@@ -67,7 +67,6 @@ button {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .Rio {
@@ -75,7 +74,6 @@ button {
   width: 760px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   flex-direction: row;
 }
 
@@ -89,8 +87,8 @@ button {
 }
 
 #alface {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
 }
 .travessia {
   max-width: 400px;
@@ -108,8 +106,8 @@ button {
 
 #farmer {
   display: flex;
-  height: 225px;
-  padding-left: 100px;
-  padding-bottom: 150px;
+  height: 300px;
+  padding-left: 90px;
+  padding-bottom: 200px;
   margin: auto;
 }
