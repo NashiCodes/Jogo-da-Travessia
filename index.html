@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="fundo">
-      <div class="telaInicial">
+      <div class="container" id="telaInicial">
         <h1>Bem vindo ao Jogo da travessia</h1>
         <dl>
           <dt>Instruções:</dt>
@@ -23,15 +23,15 @@
             ficar sozinha com a alface.
           </dd>
         </dl>
-        <button>COMEÇAR!</button>
+        <button class="botao">COMEÇAR!</button>
       </div>
-      <div class="derrota">
+      <div class="container" id="derrota">
         <h1>Que Pena você perdeu :(</h1>
-        <button>Tentar Novamente !</button>
+        <button class="botao">Tentar Novamente !</button>
       </div>
-      <div class="vitoria">
+      <div class="container" id="vitoria">
         <h1>Parabéns você conseguiu!!</h1>
-        <button>Reiniciar</button>
+        <button class="botao">Reiniciar</button>
       </div>
       <div class="Esqr">
         <img class="animal" id="ovelha" src="./imgs/ovelha.png" alt="ovelha" />
@@ -39,10 +39,8 @@
         <img class="animal" id="alface" src="./imgs/lettuce.png" alt="ovelha" />
       </div>
       <div class="Rio">
-        <div class="divBoat">
-          <img class="travessia" id="boat" src="./imgs/boat.png" alt="" />
-          <img class="travessia" id="farmer" src="./imgs/farmer.png" alt="" />
-        </div>
+        <img class="travessia" id="boat" src="./imgs/boat.png" alt="" />
+        <img class="travessia" id="farmer" src="./imgs/farmer.png" alt="" />
       </div>
       <div class="Dir"></div>
     </div>
