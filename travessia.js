@@ -186,3 +186,16 @@ function confereEsquerda() {
     removeElementos();
   }
 }
+
+
+document.body.addEventListener("click",()=>{
+  if (
+    Dir.querySelector("#ovelha") != null &&
+    Dir.querySelector("#alface") != null &&
+    Dir.querySelector("#lobo") != null
+    ) {
+      vitoria.style.display = "block";
+      removeElementos();
+    }
+  
+})
