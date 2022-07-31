@@ -13,8 +13,18 @@ let alface = document.createElement("img");
 let farmer = document.querySelector("#farmer");
 let boat = document.querySelector("#boat");
 
-const botao = document.querySelector(".botao");
+const start = document.querySelector("#start");
+const again = document.querySelector("#again");
+const reset = document.querySelector("#reset");
+let botaoMover = document.querySelector("#mover");
+
 let i = 0;
+
+//
+//
+//
+//
+
 ovelha.id = "ovelha";
 ovelha.className = "animal";
 ovelha.src = "./imgs/ovelha.png";
@@ -27,35 +37,37 @@ alface.id = "alface";
 alface.className = "animal";
 alface.src = "./imgs/lettuce.png";
 
+telaInicial.style.display = "flex";
 vitoria.style.display = "none";
 derrota.style.display = "none";
+botaoMover.style.display = "none";
 
 Rio.style.justifyContent = "flex-start";
 farmer.style.display = "none";
 boat.style.display = "none";
 
-botao.addEventListener("click", formata);
+//
+//
+//
+//
+
+start.addEventListener("click", reinicia);
+again.addEventListener("click", () => {
+  location.reload();
+});
+reset.addEventListener("click", () => {
+  location.reload();
+});
+botaoMover.addEventListener("click", travessia);
 
 ovelha.addEventListener("click", mover);
 lobo.addEventListener("click", mover);
 alface.addEventListener("click", mover);
 
-farmer.addEventListener("click", travessia);
-boat.addEventListener("click", travessia);
-
-function formata(e) {
-  if (telaInicial.style.display == "") {
-    telaInicial.style.display = "none";
-    Esqr.appendChild(ovelha);
-    Esqr.appendChild(lobo);
-    Esqr.appendChild(alface);
-    ovelha.style.display = "";
-    lobo.style.display = "";
-    alface.style.display = "";
-    farmer.style.display = "";
-    boat.style.display = "";
-  } else reinicia();
-}
+//
+//
+//
+//
 
 function removeElementos() {
   ovelha.style.display = "none";
@@ -63,18 +75,27 @@ function removeElementos() {
   alface.style.display = "none";
   farmer.style.display = "none";
   boat.style.display = "none";
+  botaoMover.style.display = "none";
 }
 
 function reinicia() {
   Esqr.appendChild(ovelha);
   Esqr.appendChild(lobo);
   Esqr.appendChild(alface);
+
+  farmer.style.display = "";
+  boat.style.display = "";
+
   ovelha.style.position = "static";
   lobo.style.position = "static";
   alface.style.position = "static";
+
   Rio.style.justifyContent = "flex-start";
+
+  telaInicial.style.display = "none";
   vitoria.style.display = "none";
   derrota.style.display = "none";
+  botaoMover.style.display = "flex";
 }
 
 function mover() {
@@ -139,8 +160,8 @@ function confereDireta() {
     derrota.style.display = "block";
     removeElementos();
   } else if (
-    Dir.querySelector("#alface") != null &&
     Dir.querySelector("#ovelha") != null &&
+    Dir.querySelector("#alface") != null &&
     Dir.querySelector("#lobo") == null
   ) {
     derrota.style.display = "block";
