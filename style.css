@@ -111,3 +111,11 @@ button {
   padding-bottom: 200px;
   margin: auto;
 }
+
+#mover {
+  display: flex;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  margin-left: 380px;
+}
